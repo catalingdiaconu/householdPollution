@@ -6,7 +6,9 @@ export const Dashboard = () => {
     return (
         <div className='dashboardPage basePage'>
             <FavoriteDevice />
-            {/* <LineChart valueXAxis={0} valueYAxis={0}/> */}
+            <div className='lineChart'>
+            <LineChart valueXAxis={0} valueYAxis={0}/>
+            </div>
         </div>
     );
 };

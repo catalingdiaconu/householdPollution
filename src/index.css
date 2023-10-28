@@ -312,7 +312,7 @@ body{
   transform: translate(2em, 2em) rotate(-15deg);
 }
 
-.dasboardPage {
+.dashboardPage {
   display: flex;
 }
 
@@ -371,3 +371,13 @@ body{
   color: #7588be;
   font-size: 15px;
 }
+
+.lineChart {
+  width: 81rem;
+  height: 30rem;
+  border: 3px solid #fefefe;
+  border-radius: 20px;
+  margin-left: 30px;
+  margin-top: 2rem;
+}
+
