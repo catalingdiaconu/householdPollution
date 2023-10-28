@@ -1,12 +1,6 @@
 import React from 'react';
 
-interface MenuProps {
-    isOpen: boolean;
-    onClose: () => void;
-}
-
-
-export const Menu: React.FC = () => {
+export const Menu = () => {
     return(
         <div className="flex flex-col items-center w-40 h-screen text-gray-400 bg-gray-900 rounded">
             <a className="flex items-center w-full px-3 mt-3" href="#">
