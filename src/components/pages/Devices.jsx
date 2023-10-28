@@ -1,17 +1,23 @@
 import React from 'react';
 import { DeviceCategoryCard } from '../organism/deviceCategoryCard';
+import {DeviceCategoryCardData} from '../organism/deviceCategoryCardData'
 
-export const Devices = ({ devices }) => {
+export const Devices = (props) => {
     return (
         <div className="devicesPage">
-            <DeviceCategoryCard />
-            {/* {devices.map(device => (
-                <div key={device.id} className="device-card">
-                    <h3>{device.name}</h3>
-                    <p>{device.description}</p>
-                    <img src={device.image} alt={device.name} />
-                </div>
-            ))} */}
+            <div className='devicesPage_Header'>
+                <h1>
+                    Manage Devices
+                </h1>
+                <h3>
+                    Manage and control all your devices in one place.
+                </h3>
+            </div>
+            <div className='devicesPage_Cards'>
+            {DeviceCategoryCardData.map(category => (
+                <DeviceCategoryCard handleClick={props.handleClick} categoryIcon={category.icon} categoryName={category.title}/>
+            ))}
+            </div>
         </div>
     );
 };

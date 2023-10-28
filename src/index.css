@@ -2,50 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BebasNeueRegular'; 
+  src: url('./components/media//fonts/BebasNeue/TTF/BebasNeue-Regular.ttf') format('ttf'), 
+}
+
+/* #111827 - menu color */
+/* #fefefe - white */
+/* #f61530 - red*/
+/* #cacdd2- grey */
+
 body{
-  background-color: #34344A;
+  background-color: #111827;
   display: flex;
   height: 100vh;
   width: 100vw;
 }
 
+.basePage {
+  height: 100vh;   
+  width: 90vw;
+}
+
 .devicesPage {
   display: flex;
-  justify-content: center; 
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
   height: 100vh;   
+  width: 90vw;
+}
+
+.devicesPage_Header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+
+.devicesPage_Header h1 {
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 10px;
+  color: #fefefe;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.devicesPage_Header h3 {
+  font-size: 20px;
+  font-weight: bolder;
+  margin-top: 10px;
+  color: #fefefe;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.devicesPage_Cards {
+  display: flex;
+  width: 90vw;
+  justify-content: center;
 }
 
 .deviceCategoryCard {
   display: flex;
+  width: 20rem;
+  height: 25rem;
   flex-direction: column;
   align-items: center;
-  border: 1px solid #8A7292;
+  justify-content: center;
+  border: 3px solid #fefefe;
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: -120px;
+  margin-bottom: 150px;
 }
+
 .deviceCategoryCard:hover {
-  background-color: #f7f7f7;
+  background-color: #fefefe;
 }
 
 .deviceCategoryCard svg {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px;
-  color: #8A7292;
+  margin-left: 20px;
+  width: 200px;
+  height: 100px;
+  fill: #7588be;
 }
 
 .deviceCategoryCard_headerInfo h2 {
-  margin: 0;
-  margin-bottom: 5px;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 10px;
+  margin-left: 50px;
+  color: #7588be;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .deviceCategoryCard_content h3 {
   margin: 0;
-  font-size: 14px;
-  color: #666;
+  font-size: 18px;
+  color: #fefefe;
+  margin-left: 30px;
+}
+
+.climateCategory_AddButton {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.climateCategory_AddButton, .climateCategory_AddButton_text, .climateCategory_AddButton_icon {
+  transition: all 0.3s;
+}
+
+.climateCategory_AddButton .climateCategory_AddButton_text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.climateCategory_AddButton .climateCategory_AddButton_icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.climateCategory_AddButton .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.climateCategory_AddButton:hover {
+  background: #34974d;
+}
+
+.climateCategory_AddButton:hover .climateCategory_AddButton_text {
+  color: transparent;
+}
+
+.climateCategory_AddButton:hover .climateCategory_AddButton_icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.climateCategory_AddButton:active .climateCategory_AddButton_icon {
+  background-color: #2e8644;
+}
+
+.climateCategory_AddButton:active {
+  border: 1px solid #2e8644;
 }
