@@ -2,7 +2,7 @@ import React from 'react';
 
 interface Props {}
 
-export const Dashboard: React.FC<Props> = () => {
+export const Dashboard: React.FC = () => {
     return (
         <div>
             {/* Your code here */}
