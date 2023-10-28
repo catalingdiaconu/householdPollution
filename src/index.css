@@ -11,6 +11,7 @@
 /* #fefefe - white */
 /* #f61530 - red*/
 /* #cacdd2- grey */
+/* #7588be - cold blue*/
 
 body{
   background-color: #111827;
@@ -227,4 +228,146 @@ body{
   transform: scale(0.8);
  }
 
- 
+ .favoriteDevice_device_checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.favoriteDevice_device_toggle_slot {
+  font-size: 10px;
+  position: relative;
+  height: 3.5em;
+  width: 7em;
+  border: 0px solid transparent;
+  border-radius: 10em;
+  background-color: white;
+  transition: background-color 250ms;
+}
+
+.favoriteDevice_device_checkbox:checked ~ .favoriteDevice_device_toggle_slot {
+  background-color: #374151;
+}
+
+.favoriteDevice_device_toggle_button {
+  transform: translate(0.3em, 0.25em);
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  background-color: #ffeccf;
+  box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.favoriteDevice_device_checkbox:checked ~ .favoriteDevice_device_toggle_slot .favoriteDevice_device_toggle_button {
+  background-color: #485367;
+  box-shadow: inset 0px 0px 0px 0.75em white;
+  transform: translate(3.65em, 0.25em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.favoriteDevice_device_checkbox:checked ~ .favoriteDevice_device_toggle_slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 0;
+  transform: translate(11em, 2em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.favoriteDevice_device_checkbox:checked ~ .favoriteDevice_device_toggle_slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(-15deg);
+}
+
+.dasboardPage {
+  display: flex;
+}
+
+.favoriteDevice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 22rem;
+  height: 30rem;
+  margin-top: 2rem;
+  margin-left: 3rem;
+  border: 3px solid #fefefe;
+  border-radius: 20px;
+}
+
+.favoriteDevice h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font: bolder;
+  color: #fefefe;
+}
+
+.favoriteDevice_device {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+
+.favoriteDevice_device svg{
+ width: 80px;
+ height: 100px;
+ fill: #7588be;
+ margin-top: 15px;
+}
+
+.favoriteDevice_device_label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: -10px;
+  margin-bottom: 5px;
+}
+
+.favoriteDevice_device_label h4 {
+  color: #7588be;
+  font-size: 25px;
+}
+
+.favoriteDevice_device_label span {
+  color: #7588be;
+  font-size: 15px;
+}

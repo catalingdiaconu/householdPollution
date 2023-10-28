@@ -1,9 +1,10 @@
 import React from 'react';
 
-export const ActiveDevices = ({ devices }) => {
+export const FavoriteDevice = ({ devices }) => {
     return (
-        <div className='activeDevices'>
-            <div className='activeDevices_device'>
+        <div className='favoriteDevice'>
+            <h3>Favorite Devices</h3>
+            <div className='favoriteDevice_device'>
                 <svg xmlns="http://www.w3.org/2000/svg" data-name="activeDevices_device_icon" viewBox="0 0 64 80" x="0px" y="0px">
                     <path d="M24.16,40.37V53.03a42.234,42.234,0,0,0,15.69,0V40.37a44.57,44.57,0,0,1-7.84.72A44.771,44.771,0,0,1,24.16,40.37ZM28.08,52.2a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,52.2Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,48.27Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,44.34Zm3.93,7.86a.985.985,0,1,1,.98-.99A.986.986,0,0,1,32.01,52.2Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,32.01,48.27Zm3.92-5.9a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,42.37Zm0,3.93a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,46.3Zm0,3.93a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,50.23Zm-2.94-6.88a.985.985,0,1,1-.98-.98A.984.984,0,0,1,32.99,43.35Z"/>
                     <path d="M39.63,38.37,38.4,33.22a9.68,9.68,0,0,1-6.31,2.32h-.17a9.7,9.7,0,0,1-6.31-2.32l-1.23,5.15A42.027,42.027,0,0,0,39.63,38.37Z"/>
@@ -15,6 +16,22 @@ export const ActiveDevices = ({ devices }) => {
                     <path d="M55.132,10.658H53.448a2.684,2.684,0,1,0,0,5.368h1.684a1,1,0,0,0,0-2H53.448a.684.684,0,1,1,0-1.368h1.684a2.368,2.368,0,1,1,0,4.736H43.752a1,1,0,0,0,0,2h11.38a4.368,4.368,0,1,0,0-8.736Z"/>
                     <path d="M52.146,21.744H43.752a1,1,0,0,0,0,2h8.394a2.368,2.368,0,1,1,0,4.736H50.462a.684.684,0,0,1,0-1.368h1.684a1,1,0,0,0,0-2H50.462a2.684,2.684,0,0,0,0,5.368h1.684a4.368,4.368,0,1,0,0-8.736Z"/>
                 </svg>
+                <div className='favoriteDevice_device_label'>
+                    <h4>Air purifier</h4>
+                    <span>Status: connected</span>
+                </div>
+                <label>
+                    <input class="favoriteDevice_device_checkbox" type="checkbox" />
+                    <div class="favoriteDevice_device_toggle_slot">
+                        <div class="sun-icon-wrapper">
+                        <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                        </div>
+                        <div class="favoriteDevice_device_toggle_button"></div>
+                        <div class="moon-icon-wrapper">
+                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                        </div>
+                    </div>
+                </label>
             </div>
         </div>
     );

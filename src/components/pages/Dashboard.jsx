@@ -1,11 +1,11 @@
 import React from 'react';
 import { LineChart } from '../charts/lineChart/lineChart';
-import { ActiveDevices } from '../organism/activeDevices';
+import { FavoriteDevice } from '../organism/favoriteDevice';
 
 export const Dashboard = () => {
     return (
         <div className='dashboardPage basePage'>
-            <ActiveDevices />
+            <FavoriteDevice />
             {/* <LineChart valueXAxis={0} valueYAxis={0}/> */}
         </div>
     );
