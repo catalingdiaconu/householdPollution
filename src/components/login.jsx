@@ -1,22 +1,18 @@
 import React, { useState } from "react";
 
-interface LoginProps {
-    onLogin: (username: string, password: string) => void;
-}
-
-export const Login: React.FC = () => {
+export const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     };
 
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handlePasswordChange = (event) => {
         setPassword(event.target.value);
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
     };
 

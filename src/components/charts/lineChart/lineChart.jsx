@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import {scaleLinear, scaleTime, timeFormat, extent, format, csv} from "d3";
+import React from 'react';
+import {scaleLinear, scaleTime, timeFormat, extent, format} from 'd3';
+import { useData} from '../data/useData';
 import { AxisBottom } from './axisBottom';
 import { AxisLeft } from './axisLeft';
 import { Marks } from './marks';
@@ -10,46 +11,28 @@ const margin = { top: 20, right: 80, bottom: 65, left: 90 };
 const xAxisLabelOffset = 50;
 const yAxisLabelOffset = 45;
 
-interface valueAxis {
-        value: any,
-        label: string,
-}
+export const LineChart = ({valueXAxis, valueYAxis}) => {
 
-export const LineChart: React.FC<valueAxis> = (valueXAxis, valueYAxis) => {
+    const data = useData();
 
-    const csvUrl =
-  'https://gist.githubusercontent.com/curran/90240a6d88bdb1411467b21ea0769029/raw/7d4c3914cc6a29a7f5165f7d5d82b735d97bcfe4/week_temperature_sf.csv';
-
-const [data, setData] = useState<any | null>(null);
-
-useEffect(() => {
-    const row = (d: any) => {
-        d.temperature = +d.temperature;
-        d.timestamp = new Date(d.timestamp);
-        return d;
-    };
-    csv(csvUrl, row).then((d: any) => setData(d));
-}, []);
-
-if (!data) {
-    return (
+    if (!data) {
+        return (
         <div className={'loadingData'}>
-            <p>Loading...</p>
+        <p>Loading...</p>
         </div>
-    )
-}
+        )
+    }
 
     const innerHeight = height - margin.top - margin.bottom;
     const innerWidth = width - margin.left - margin.right;
 
-    const xValue = (d: any) => d[valueXAxis.value];
+    const xValue = d => d[valueXAxis.value];
     const xAxisLabel = valueXAxis.label;
 
-    const yValue = (d: any) => d[valueYAxis.value];
+    const yValue = d => d[valueYAxis.value];
     const yAxisLabel = valueYAxis.label;
 
     const xAxisTickFormat = timeFormat('%d/%m/%Y');
-
 
     const xScale = scaleTime()
         .domain(extent(data, xValue))
@@ -62,7 +45,7 @@ if (!data) {
         .nice();
 
     const siFormat = format('.2s');
-    let yTickFormat = (tickValue: any) => {
+    let yTickFormat = tickValue => {
         if (tickValue !== null && tickValue > 9999) {
             return siFormat(tickValue).replace('G', 'B');
         } else {
