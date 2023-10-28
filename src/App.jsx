@@ -5,7 +5,7 @@ import { Devices } from './components/pages/Devices';
 import { ClimateCategory } from './components/pages/ClimateCategory';
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState('devices');
+    const [currentPage, setCurrentPage] = useState('dashboard');
 
     const handleClick = (page) => {
         setCurrentPage(page);
@@ -24,7 +24,7 @@ const App = () => {
                   case 'climate':
                       return <ClimateCategory />
                   default:
-                      return <ClimateCategory />;
+                      return <Dashboard />;
               }
           })()}
         </div>

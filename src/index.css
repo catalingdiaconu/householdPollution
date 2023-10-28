@@ -165,3 +165,66 @@ body{
 .climateCategory_AddButton:active {
   border: 1px solid #2e8644;
 }
+
+.climateCategory_DeleteButton {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+  background: #e62222;
+ }
+ 
+.climateCategory_DeleteButton, .climateCategory_DeleteButton span {
+  transition: 200ms;
+ }
+ 
+ .climateCategory_DeleteButton .climateCategory_DeleteButton_text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+ }
+ 
+ .climateCategory_DeleteButton .climateCategory_DeleteButton_icon {
+  position: absolute;
+  border-left: 1px solid #c41b1b;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ 
+ .climateCategory_DeleteButton svg {
+  width: 15px;
+  fill: #eee;
+ }
+ 
+ .climateCategory_DeleteButton:hover {
+  background: #ff3636;
+ }
+ 
+ .climateCategory_DeleteButton:hover .climateCategory_DeleteButton_text {
+  color: transparent;
+ }
+ 
+ .climateCategory_DeleteButton:hover .climateCategory_DeleteButton_icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+ }
+ 
+ .climateCategory_DeleteButton:focus {
+  outline: none;
+ }
+ 
+ .climateCategory_DeleteButton:active .climateCategory_DeleteButton_icon svg {
+  transform: scale(0.8);
+ }
+
+ 
