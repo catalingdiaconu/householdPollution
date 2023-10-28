@@ -1,8 +1,6 @@
 import React from 'react';
 
-interface Props {}
-
-export const Dashboard: React.FC = () => {
+export const Dashboard = () => {
     return (
         <div>
             {/* Your code here */}
