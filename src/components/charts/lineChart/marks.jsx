@@ -4,7 +4,7 @@ export const Marks = ({data, xScale, yScale, xValue, yValue, tooltipFormat}) => 
     <g className="marks">
         <>
             <path
-                fill="none"
+                fill="#fefefe"
                 stroke="#E3BA22"
                 style={{strokeWidth: '2px'}}
                 d={line()

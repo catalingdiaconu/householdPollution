@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart } from '../charts/lineChart/lineChart';
+import { Chart } from '../charts/lineChart/chart';
 import { FavoriteDevice } from '../organism/favoriteDevice';
 
 export const Dashboard = () => {
@@ -7,7 +7,7 @@ export const Dashboard = () => {
         <div className='dashboardPage basePage'>
             <FavoriteDevice />
             <div className='lineChart'>
-            <LineChart valueXAxis={0} valueYAxis={0}/>
+            <Chart valueXAxis={0} valueYAxis={0}/>
             </div>
         </div>
     );

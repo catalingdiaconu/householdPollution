@@ -21,14 +21,14 @@ export const FavoriteDevice = ({ devices }) => {
                     <span>Status: connected</span>
                 </div>
                 <label>
-                    <input class="favoriteDevice_device_checkbox" type="checkbox" />
-                    <div class="favoriteDevice_device_toggle_slot">
-                        <div class="sun-icon-wrapper">
-                        <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                    <input className="favoriteDevice_device_checkbox" type="checkbox" />
+                    <div className="favoriteDevice_device_toggle_slot">
+                        <div className="sun-icon-wrapper">
+                        <div className="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
                         </div>
-                        <div class="favoriteDevice_device_toggle_button"></div>
-                        <div class="moon-icon-wrapper">
-                        <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                        <div className="favoriteDevice_device_toggle_button"></div>
+                        <div className="moon-icon-wrapper">
+                        <div className="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
                         </div>
                     </div>
                 </label>
