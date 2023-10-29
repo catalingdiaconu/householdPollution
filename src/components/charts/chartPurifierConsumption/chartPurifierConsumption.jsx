@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
-import { toast } from 'react-toastify';
-import axios from 'axios';
 
-export const Chart = ({ currentPurifierState }) => {
+export const ChartPurifierConsumption = ({ currentPurifierState }) => {
+    const min = 1.8;
+    const max = 2.2;
     const [data, setData] = useState([]);
     const [isFirst20Seconds, setIsFirst20Seconds] = useState(true);
 
@@ -22,7 +22,7 @@ export const Chart = ({ currentPurifierState }) => {
         if (currentPurifierState) {
             interval = setInterval(() => {
                 const currentTime = new Date().toLocaleTimeString();
-                newValue = isFirst20Seconds ? Math.random() * 20 + 40 : Math.random() * 10 + 90;
+                newValue = isFirst20Seconds ? Math.random() * (max - min) + min : Math.random() * (max - min) + min + 1.7;
 
                 setData(prevData => {
                     if (prevData.length > 9) {
@@ -34,27 +34,6 @@ export const Chart = ({ currentPurifierState }) => {
 
             timeout = setTimeout(() => {
                 setIsFirst20Seconds(false);
-                // Make Axios POST request here
-                axios.post('http://localhost:5000/run-command', {
-                    "command": "sudo python3 motor_v3.py start"
-})
-                .then(response => {
-                    console.log(response.data);
-                })
-                .catch(error => {
-                    console.error("Error:", error);
-                });
-
-                toast.info('Abnormal humidity detected! Starting air purifier!', {
-                    position: "bottom-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "dark",
-                    });
             }, 16000);  // 20 seconds
         }
 
@@ -65,12 +44,12 @@ export const Chart = ({ currentPurifierState }) => {
     }, [currentPurifierState, isFirst20Seconds]);
 
     return (
-        <div style={{ margin: '40px', marginLeft: '-20px' }}> 
-            <LineChart width={1300} height={400} data={data}>
+        <div style={{ margin: '20px', marginLeft: '0', marginTop: "-10px" }}> 
+            <LineChart width={1100} height={360} data={data}>
                 <Line type="monotone" dataKey="value" stroke="#8884d8" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="time" />
-                <YAxis tickFormatter={(tick) => `${tick}%`}/>
+                <YAxis tickFormatter={(tick) => `${tick}W`}/>
                 <Tooltip />
             </LineChart>
         </div>

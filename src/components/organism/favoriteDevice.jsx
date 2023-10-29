@@ -1,9 +1,10 @@
 import React from 'react';
+import SwitchCheckbox from '../atom/switchCheckbox';
 
-export const FavoriteDevice = ({ devices }) => {
+export const FavoriteDevice = ({handlePurifierState, currentPurifierState}) => {
     return (
         <div className='favoriteDevice'>
-            <h3>Favorite Devices</h3>
+            <h3>Pinned Device</h3>
             <div className='favoriteDevice_device'>
                 <svg xmlns="http://www.w3.org/2000/svg" data-name="activeDevices_device_icon" viewBox="0 0 64 80" x="0px" y="0px">
                     <path d="M24.16,40.37V53.03a42.234,42.234,0,0,0,15.69,0V40.37a44.57,44.57,0,0,1-7.84.72A44.771,44.771,0,0,1,24.16,40.37ZM28.08,52.2a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,52.2Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,48.27Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,28.08,44.34Zm3.93,7.86a.985.985,0,1,1,.98-.99A.986.986,0,0,1,32.01,52.2Zm0-3.93a.985.985,0,1,1,.98-.99A.986.986,0,0,1,32.01,48.27Zm3.92-5.9a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,42.37Zm0,3.93a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,46.3Zm0,3.93a.985.985,0,1,1-.98.98A.984.984,0,0,1,35.93,50.23Zm-2.94-6.88a.985.985,0,1,1-.98-.98A.984.984,0,0,1,32.99,43.35Z"/>
@@ -17,21 +18,37 @@ export const FavoriteDevice = ({ devices }) => {
                     <path d="M52.146,21.744H43.752a1,1,0,0,0,0,2h8.394a2.368,2.368,0,1,1,0,4.736H50.462a.684.684,0,0,1,0-1.368h1.684a1,1,0,0,0,0-2H50.462a2.684,2.684,0,0,0,0,5.368h1.684a4.368,4.368,0,1,0,0-8.736Z"/>
                 </svg>
                 <div className='favoriteDevice_device_label'>
-                    <h4>Air purifier</h4>
-                    <span>Status: connected</span>
+                    <h4 >Air purifier</h4>
+                    <span>Status: {!currentPurifierState ? "Disconnected" : "Connected"}</span>
                 </div>
-                <label>
-                    <input className="favoriteDevice_device_checkbox" type="checkbox" />
-                    <div className="favoriteDevice_device_toggle_slot">
-                        <div className="sun-icon-wrapper">
-                        <div className="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
-                        </div>
-                        <div className="favoriteDevice_device_toggle_button"></div>
-                        <div className="moon-icon-wrapper">
-                        <div className="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
-                        </div>
-                    </div>
-                </label>
+                <SwitchCheckbox handlePurifierState={handlePurifierState} currentPurifierState={currentPurifierState}/>
+            </div>
+            <hr />
+            <div className='favoriteDevice_info'>
+                <div>
+                    <span className='favoriteDevice_info_title'>Brand: </span>
+                    <span>PureAirMax</span>
+                </div>
+                <div>
+                    <span className='favoriteDevice_info_title'>Model: </span>
+                    <span>APX-5000</span>
+                </div>
+                <div>
+                    <span className='favoriteDevice_info_title'>MAC Address: </span>
+                    <span>74:D0:2B:A3:F4:59</span>
+                </div>
+                <div>
+                    <span className='favoriteDevice_info_title'>Serial Number: </span>
+                    <span>PAM50001023876 </span>
+                </div>
+                <div>
+                    <span className='favoriteDevice_info_title'>Firmware Version: </span>
+                    <span>1.0.4</span>
+                </div>
+                <div>
+                    <span className='favoriteDevice_info_title'>Connectivity: </span>
+                    <span>Wi-Fi 802.11 b/g/n, Bluetooth 5.0</span>
+                </div>
             </div>
         </div>
     );
